@@ -1,0 +1,219 @@
+/* 
+Default style for qwdrama
+Author: Viktor Persson, Arcsin (http://arcsin.se/)
+*/
+
+/* default elements */
+* {margin: 0; padding: 0;}
+
+html {height: 100%; padding-bottom: 1px;}
+
+body {
+	background: #DFE3DF url('img/body.jpg') repeat-x;
+	color: #332;
+	font: normal 12px Verdana,sans-serif;
+	padding-bottom: 12px;
+}
+
+a {color: #03A; text-decoration: none;}
+a:hover {color: #F09; text-decoration: underline;}
+
+blockquote {background: #F9FAFC url('img/quote.gif') no-repeat; border-bottom: 1px solid #E9EAEC; border-top: 1px solid #EEE; color: #335; display: block; margin: 4px 0 1em; padding: 12px 1em 5px 44px;}
+
+code {font: normal 1em Georgia,sans-serif; background: #FFE; color: #000;}
+pre {font: normal 1em sans-serif; margin-bottom: 1em; background: #FAFAFA; padding: 1em; border: 1px solid #DDD; white-space: pre; line-height: 1.4em;}
+
+fieldset {padding: 12px 10px; background: #FFE; color: #332; border: 1px solid #DDB; margin-bottom: 1em;}
+legend {font: bold 1em Verdana,sans-serif; padding: 0 6px; color: #663;}
+
+small,.small {font-size: 0.9em;}
+
+h1 {font: normal 22px sans-serif;}
+h2 {font: normal 18px sans-serif;}
+h3 {font: bold 14px Verdana,sans-serif;}
+h4 {font: bold 12px sans-serif;}
+h1,h2,h3 {margin-bottom: 4px;}
+h4 {margin-bottom: 2px;}
+h1,h2,h3,h4 {clear: both;}
+h1 a {color: #40558D;}
+h1 a:hover {color: #F06;} 
+h2 a, h3 a {color: #2F366D;}
+h2 a:hover, h3 a:hover {color: #06A;}
+
+p,ul {padding: 0.2em 0 1em;}
+ul ul {margin-bottom: 0.5em;}
+
+img {border: none;}
+img.bordered,img.size-full {border: 1px solid #DDD; background: #FFF; padding: 5px;}
+img.left {margin: 0 12px 12px 0;}
+img.right {margin: 0 0 12px 12px;}
+
+table {width: 100%; border: none;}
+
+ul {margin-left: 1.6em;}
+ol {margin: 0 0 1em 2em;}
+
+:focus {outline: 0;}
+
+/* structure */
+#wrapper {width: 950px; margin: 0 auto; background: #E9EEED url('img/wrapper.jpg') repeat-x; border-bottom: 5px solid #E9EEED;}
+#inner_wrapper {margin: 0 5px; background: #FDFDFA url('img/inner_wrapper.gif') repeat-y right top;}
+
+/* top */
+#top {height: 38px; background: #485E6B url('img/header.gif') repeat-x;}
+
+/* header */
+#header {border-top: 2px solid #2D4C5E; background: #F6F9FD url('img/header.jpg') no-repeat; height: 120px;}
+#mainnav {width: 760px;}
+
+/* highlight */
+#highlight {margin: 9px 6px 0 0;}
+#highlight a {display: block; float: right; width: 186px; height: 48px; margin-left: 6px;}
+#highlight a:hover {background-position: left bottom;}
+#highlight .clearer {height: 6px;}
+
+#goldrush {background: url('img/banners/goldrush.png') no-repeat;}
+#nquake {background: url('img/banners/nquake.png') no-repeat;}
+#wiki {background: url('img/banners/wiki.png') no-repeat;}
+#eql6 {background: url('img/banners/eql6.png') no-repeat;}
+#qhlan11 {background: url('img/banners/qhlan11.png') no-repeat;}
+#nqr {background: url('img/banners/nqr.png') no-repeat;}
+#gfx {background: url('img/banners/gfx.png') no-repeat;}
+#youtellus_banner {background: url('img/banners/youtellus.png') no-repeat;}
+
+#logo a {display: block; height: 38px; width: 172px; background: url('img/qwdrama.gif') no-repeat;}
+#rss {padding: 5px 10px 0 0;}
+#rss a {background: url('img/rss.gif') no-repeat left top; display: block; width: 28px; height: 28px;}
+#rss a:hover {background-position: left bottom;}
+
+
+/* navigation */
+#navigation {background: #F1F4F8 url('img/navigation.gif') repeat-x left bottom; padding-bottom: 3px;}
+#navigation a {float: left; font: bold 16px sans-serif; line-height: 35px; padding: 0 14px; color: #60658D; border-right: 1px solid #D2DAE2;}
+#navigation_top {height: 2px; font-size: 0; background: url('img/navigation_top.gif') repeat-x;}
+#navigation a:hover {text-decoration: none; background: #F6F8FC; color: #1F265D}
+
+/* dashboard*/
+#network {color: #DADCDF; font-size: 0.9em;}
+#network a {color: #FAFCFF;}
+#network a:hover {color: #FFC;}
+#network_content {background: #657B87 url('img/network.jpg') repeat-x; padding: 10px; display: none;}
+#network li,#network ul {border-color: #738995;}
+#network ul {margin: 0;}
+#network_toggle {display: block; margin-left: auto; width: 101px; height: 20px; background: url('img/network_toggle.gif') no-repeat left top;}
+#network_gfx {width: 280px;}
+#network_schedule {width: 395px; padding-top: 3px;}
+#network_wiki {width: 220px; margin-left: 12px;}
+#network_schedule .right a {color: #CFC;}
+#network_schedule .clearer {height: 7px; background: url('img/line_blue.gif') repeat-x left center;}
+
+/* main */
+#main {width: 530px;}
+#main .content {padding-left: 12px;}
+#sidebar {width: 384px;}
+#sidebar .content {padding: 0 10px 10px 0;}
+#sidebar ul {margin-left: 0;}
+#main_container {padding: 16px 0 10px;}
+
+/* footer */
+#footer {background: #4B616E url('img/footer.gif') repeat-x; color: #CCC; padding: 10px; font: normal 1.1em sans-serif;}
+#footer a {color: #FFF;}
+
+/* misc */
+.clearer {clear: both; font-size: 0;}
+.col2 .right, .col2 .left {width: 48%;}
+.left {float: left;}
+.right {float: right;}
+.nicelist li, .related_post li {padding: 4px 0 4px 2px; list-style: none; border-bottom: 1px solid #EAEAEA; overflow: auto;}
+.highlight {padding: 10px 10px 0; background: #FFE; border: 1px solid #EED;}
+.highlight a {color: #000; text-decoration: underline;}
+.nomtop {margin-top: 0;}
+.tright {text-align: right;}
+.separator,.separator_small {clear: both;}
+.separator {width: 520px; margin: 0 auto 18px; height: 22px; background: url('img/separator.gif') no-repeat center top;}
+.separator a {display: block; width: 22px; height: 22px; margin: 0 auto;}
+.separator_small {height: 12px; background: url('img/line_gray.gif') repeat-x;}
+.nextprev {padding: 2px 0 6px; font-size: 0.9em;}
+p.intro {clear: both; padding-top: 2px; font-size: 0.9em; margin-bottom: 2px;}
+.spacer {height: 12px;}
+.share {clear: both;}
+
+/* icons */
+span.comment {background: url('img/icons/comment.gif') no-repeat left center; padding-left: 18px;}
+span.comments {background: url('img/icons/comments.gif') no-repeat left center; padding-left: 18px;}
+span.date {background: url('img/icons/date.gif') no-repeat left center; padding-left: 18px;}
+span.tag {background: url('img/icons/tag.gif') no-repeat left center; padding-left: 18px;}
+span.folder {background: url('img/icons/folder.gif') no-repeat left center; padding-left: 21px;}
+span.document {background: url('img/icons/document.gif') no-repeat left center; padding-left: 14px;}
+span.play {background: url('img/icons/play.gif') no-repeat left center; padding-left: 18px;}
+span.video {background: url('img/icons/video.gif') no-repeat left center; padding-left: 18px;}
+span.award {background: url('img/icons/award.gif') no-repeat left center; padding-left: 18px;}
+span.prev {background: url('img/icons/arrowleft.gif') no-repeat left center; padding-left: 16px;}
+span.next {background: url('img/icons/arrowright.gif') no-repeat right center; padding-right: 16px;}
+
+/* special links */
+a.wiki {border-bottom: 1px dashed #F90; color: #444;}
+a.wiki:hover {text-decoration: none; color: #06F; border-color: #06F;}
+a.goldrush {background: url('img/icon_cash.gif') no-repeat left center; padding-left: 11px; color: #060;}
+
+/* post */
+.post .body {line-height: 1.5em;}
+.post .metadata {clear: both; padding: 7px 10px 9px; border-top: 1px solid #EEE; background: #FAFAFA; color: #666; font-size: 0.9em; margin: 10px 0 16px;}
+.post .metadata a {color: #226;}
+.answer {padding-left: 12px; border-left: 3px solid #6AF;}
+.post .date {color: #668; margin-bottom: 8px; font: normal 0.9em Verdana,sans-serif;}
+.post .body li {padding-bottom: 4px;}
+.post .body table {margin-bottom: 12px;}
+.post .body ul, .post .body ol {margin-bottom: 6px;}
+
+/* comments */
+#comments {padding-top: 1em;}
+.user {font-weight: bold; color: #03A;}
+.comment .body {width: 100%; overflow: auto;}
+.comment .date {margin: 2px 0 4px;}
+
+textarea.textarea, input.text {
+	padding: 3px 4px;
+	border: 1px solid #888;
+	border-color: #888 #CCC #DDD #888;
+	font: normal 1em Verdana,sans-serif;
+	line-height: 1.3em;
+}
+
+/* tabs */
+.label {clear: both; font: normal 1.8em sans-serif; letter-spacing: -1px; border-bottom: 1px solid #CCC; color: #789;}
+.tabs li {list-style-type: none; margin: 0; float: left; margin-right: 10px; padding: 3px 4px; background: none;}
+.tabs li a {font: bold 11px sans-serif; text-decoration: none; color: #888; }
+.tabs li a:hover{ color: #555; text-decoration: underline;}
+.tabs li.selected{ background: url('img/icons/arrow_down.gif') no-repeat center top;}
+.tabs li.selected a {color: #036;} /*selected main tab style */
+.tabs li.selected a:hover{text-decoration: none;} /*selected main tab style */
+
+/* container */
+.container {clear: both; margin-bottom: 14px; color: #776; padding-top: 3px;}
+.container_separator {height: 1px; font-size: 0; background: #E5E9EC; margin-bottom: 10px}
+.container a {color: #468;}
+.container a:hover {color: #013;}
+.container .clearer {height: 12px; background: url('img/line_gray.gif') repeat-x left center;}
+.container .col2 .clearer {height: 0; background: none;}
+.container .current-cat {font-weight: bold;}
+.container .left {padding-left: 2px;}
+
+/* polls */
+.poll {color: #666;}
+.poll .right {color: #888;}
+.poll .clearer {background: none; height: 0;}
+.poll-question {color: #444; font: bold 1.1em Verdana,sans-serif;}
+.democracy {padding: 0 4px;}
+.democracy li {list-style: none; font: bold 0.9em Verdana,sans-serif; padding: 3px 0;}
+.democracy ul {margin: 5px 0;}
+.dem-archives .democracy {width: 330px;}
+.procentbar {background: #34A6D3 url('img/poll_bar.gif') repeat-x; height: 5px; margin-top: 1px; border: 1px solid #0075B0;}
+.myvote .procentbar {background: #49B0D8 url('img/poll_bar2.gif') repeat-x;}
+
+/* you tell us */
+#youtellus-inner {padding: 10px; background: #FFFFFA; border: 1px solid #E6E6E0; border-top: none;}
+
+
+/* Margins etc */
+img.nomargin {margin: 0;}

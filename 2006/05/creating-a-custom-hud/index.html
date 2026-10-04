@@ -1,0 +1,315 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>Tutorial: Creating a custom HUD | qwdrama</title>
+<meta name="keywords" content="tutorial,creating,a,custom,hud,qwdrama"/>
+<link rel="shortcut icon" type="image/ico" href="../../../favicon.ico" />
+
+<link rel="stylesheet" href="../../../default.css" type="text/css" media="screen" />
+
+<meta name="generator" content="WordPress 2.6" />
+
+</head>
+<body>
+
+<div id="wrapper">
+<div id="inner_wrapper">
+
+	<div id="top">
+		<div class="left" id="logo"><a href="../../../" title="qwdrama"><span></span></a></div>
+		<div class="right" id="rss"></div>
+		<div class="clearer"></div>
+	</div>
+
+	<div id="header">
+		<div id="highlight">
+			<a href="https://www.quakeworld.nu/wiki/" title="QuakeWorld Wiki - the open QW encyclopedia" id="wiki"><span></span></a>
+			<a href="http://gfx.quakeworld.nu/" title="QuakeWorld GFX - Download QW Graphics" id="gfx"><span></span></a>
+			<div class="clearer"></div>
+			<a href="http://goldrush.quakeworld.nu/" title="Goldrush - QuakeWorld betting" id="goldrush"><span></span></a>
+			<a href="http://nquake.com/" title="nQuake - download QuakeWorld today!" id="nquake"><span></span></a>
+			<div class="clearer"></div>
+		</div>
+	</div>
+
+	<div id="navigation_top"></div>
+
+	<div id="navigation">	
+
+		<div class="left" id="mainnav">
+			<a href="../../../" title="qwdrama frontpage" accesskey="1">Home</a>
+			<a href="../../../category/news/" title="View all posts in news" accesskey="2">News</a>
+			<a href="../../../category/interviews/" title="View all posts in interviews" accesskey="3">Interviews</a>
+			<a href="../../../category/tutorials/" title="View all posts in tutorials" accesskey="4">Tutorials</a>
+			<a href="../../../category/drama/" title="View all posts in drama" accesskey="5">Drama</a>
+			<a href="../../../2009/" title="Archives" accesskey="6">Archives</a>
+			<a href="../../../about/" title="About qwdrama" accesskey="7">About</a>
+			<div class="clearer"></div>
+		</div>
+
+		<div class="clearer"></div>
+
+	</div>
+
+	<div id="main_container">
+		
+	<div class="left" id="main">
+
+		<div class="content">
+
+  
+			<div class="post" id="post-35">
+				
+				<h1>Creating a custom HUD</h1>
+
+				<div class="date">Monday 22nd May, 2006 | <span class="comment"><a href="#comments">Skip to comments (0)</a></span></div>
+
+				<div class="body">
+					<p>This is a simple tutorial about how to create your own custom HUD with EzQuake.</p>
+<p><strong>Step 1</strong><br />
+First of all we need ezquake_URL</p>
+<p><strong>Step 2</strong><br />
+We need to remove the old HUD and start with a fresh/clear screen. We do this by typing <code>scr_newhud 1</code>.</p>
+<p><strong>Step 3</strong><br />
+The easiest way of making a HUD you need to see all items (armors/weapons/powerups). You could go play on some server and take everything you need, or just simply type <code>hud_planmode 1</code>.</p>
+<p><strong>Step 4</strong><br />
+We simple start of with the most important stuff, showing you’re health and armor. Type <code>hud_health_show 1</code>, <code>hud_armor_show 1</code> they both will show up on the top-left side of the screen. Of course you don’t want them there so we need to move them. Type <code>hud_health_pos_x</code> this sets the horizontal position of health level and <code>hud_health_pos_y</code> to set the vertical position of health level.</p>
+<p><strong>Step 5</strong><br />
+If you find your HUD-items to large or to small, you can adjust it by using <code>hud_health_scale</code> / <code>hud_armor_scale</code> command. I think you know enough of the basic settings.</p>
+<p><strong>Step 6</strong><br />
+Its also possible to make groups. The command is <code>hud_group1_show 1</code> You can change the width and height of the group <code>hud_group1_width xxx</code> and <code>hud_group1_height xxx</code>. It also possible to make the group darker/lighter <code>hud_group_frame x</code>. And to move it use the <code>hud_group1_pos_x</code> and <code>hud_group1_pos_y</code> commands  again.</p>
+<p><strong>Step 7</strong><br />
+You can find a list of all available HUD-commands right here. Of course I made a HUD myself, you can find it over here.</p>
+<pre>//MQWCL HUD
+hud_ammo1_pos_x              "233"
+hud_ammo1_pos_y              "535"
+hud_ammo1_scale              "0.4"
+hud_ammo1_show               "1"
+hud_ammo2_pos_x              "269"
+hud_ammo2_pos_y              "535"
+hud_ammo2_scale              "0.4"
+hud_ammo2_show               "1"
+hud_ammo3_pos_x              "305"
+hud_ammo3_pos_y              "535"
+hud_ammo3_scale              "0.4"
+hud_ammo3_show               "1"
+hud_ammo4_pos_x              "338"
+hud_ammo4_pos_y              "535"
+hud_ammo4_scale              "0.4"
+hud_ammo4_show               "1"
+hud_ammo_pos_x               "430"
+hud_ammo_pos_y               "385"
+hud_armor_pos_x              "30"
+hud_armor_pos_y              "529"
+hud_armor_scale              "0.8"
+hud_armor_show               "1"
+hud_armor_style              "2"
+hud_face_pos_x               "100"
+hud_face_pos_y               "532"
+hud_face_scale               "0.6"
+hud_face_show                "1"
+hud_fps_decimals             "0"
+hud_fps_pos_x                "-430"
+hud_fps_pos_y                "-30"
+hud_fps_show                 "1"
+hud_frags_pos_x              "436"
+hud_frags_pos_y              "510"
+hud_frags_space_x            "4"
+hud_gameclock_align_y        "top"
+hud_gameclock_pos_x          "-28"
+hud_gameclock_pos_y          "502"
+hud_gameclock_scale          "1.8"
+hud_gameclock_show           "1"
+hud_group1_alpha             "0,2"
+hud_group1_frame             "0.2"
+hud_group1_height            "22"
+hud_group1_pos_x             "5"
+hud_group1_pos_y             "528"
+hud_group1_show              "1"
+hud_group1_width             "176"
+hud_group2_frame             "0.2"
+hud_group2_height            "24"
+hud_group2_pos_x             "5"
+hud_group2_pos_y             "501"
+hud_group2_show              "1"
+hud_group2_width             "210"
+hud_group3_frame             "0.2"
+hud_group3_height            "25"
+hud_group3_pos_x             "218"
+hud_group3_pos_y             "525"
+hud_group3_show              "1"
+hud_group3_width             "165"
+hud_group4_frame             "0.2"
+hud_group4_height            "27"
+hud_group4_pos_x             "218"
+hud_group4_pos_y             "501"
+hud_group4_show              "1"
+hud_group4_width             "165"
+hud_group5_frame             "0.2"
+hud_group5_height            "22"
+hud_group5_pos_x             "184"
+hud_group5_pos_y             "528"
+hud_group5_show              "1"
+hud_group5_width             "31"
+hud_group6_frame             "0.2"
+hud_group6_height            "49"
+hud_group6_pos_x             "386"
+hud_group6_pos_y             "501"
+hud_group6_show              "1"
+hud_group6_width             "248"
+hud_group7_frame             "0.2"
+hud_group7_height            "3"
+hud_group7_pos_x             "386"
+hud_group7_pos_y             "533"
+hud_group7_width             "248"
+hud_gun2_pos_x               "240"
+hud_gun2_pos_y               "-40"
+hud_gun2_show                "1"
+hud_gun2_style               "3"
+hud_gun3_pos_x               "-16"
+hud_gun3_pos_y               "11"
+hud_gun3_show                "1"
+hud_gun3_style               "3"
+hud_gun4_pos_x               "20"
+hud_gun4_pos_y               "-11"
+hud_gun4_show                "1"
+hud_gun4_style               "3"
+hud_gun5_pos_x               "-17"
+hud_gun5_pos_y               "11"
+hud_gun5_show                "1"
+hud_gun5_style               "3"
+hud_gun6_pos_x               "20"
+hud_gun6_pos_y               "-11"
+hud_gun6_show                "1"
+hud_gun6_style               "3"
+hud_gun7_pos_x               "-16"
+hud_gun7_pos_y               "11"
+hud_gun7_show                "1"
+hud_gun7_style               "3"
+hud_gun8_pos_x               "17"
+hud_gun8_show                "1"
+hud_gun8_style               "3"
+hud_health_pos_x             "120"
+hud_health_pos_y             "529"
+hud_health_scale             "0.8"
+hud_health_show              "1"
+hud_iarmor_pos_x             "10"
+hud_iarmor_pos_y             "532"
+hud_iarmor_scale             "0.6"
+hud_iarmor_show              "1"
+hud_pent_align_x             "center"
+hud_pent_align_y             "bottom"
+hud_pent_place               "screen"
+hud_pent_show                "1"
+hud_ping_blink               "0"
+hud_ping_pos_x               "400"
+hud_ping_show_pl             "0"
+hud_quad_align_x             "center"
+hud_quad_align_y             "bottom"
+hud_quad_place               "screen"
+hud_quad_pos_x               "-120"
+hud_quad_pos_y               "-3"
+hud_quad_show                "1"
+hud_ring_align_x             "center"
+hud_ring_align_y             "bottom"
+hud_ring_place               "screen"
+hud_ring_pos_x               "-120"
+hud_ring_pos_y               "-5"
+hud_ring_show                "1"
+hud_teamfrags_align_x        "center"
+hud_teamfrags_align_y        "bottom"
+hud_teamfrags_pos_x          "-245"
+hud_teamfrags_pos_y          "-29"
+hud_teamfrags_show           "1"
+hud_teamfrags_space_x        "20"</pre>
+<p><strong>***  This HUD is created for -conwidth 640 its not compatible with other resolutions  ***</strong></p>
+<p>And this is how it looks now:</p>
+<p><img id="image36" alt="Tutorial - HUD" src="../../../uploads/2006/12/tutorial_hud.jpg" /></p>
+
+
+					
+					<div class="metadata">
+						<div class="left">Posted by <a href="../../../author/murdoc/" title="Posts by murdoc">murdoc</a> in <a href="../../../category/tutorials/" title="View all posts in Tutorials" rel="category tag">Tutorials</a></div>
+						<div class="right"><span class="tag"></span></div>
+						<div class="clearer"></div>
+					</div>
+
+				</div>
+
+			</div>
+
+			
+	<h3 id="comments">0 responses to &#8220;Creating a custom HUD&#8221;</h3>
+
+	<div class="separator"><a href="#top" title="To top"><span></span></a></div>
+
+			 <p class="nocomments">(comments are closed)</p>
+
+	
+		</div>
+
+	</div>
+
+	<div class="right" id="sidebar">
+
+		<div class="content">
+
+			<div class="label">quicknav</div>
+
+			<div class="container">
+
+				<ul class="nicelist">
+										<li><span class="next"><a href="../spectating-via-qizmo/">Spectating via Qizmo</a></span></li>				</ul>
+			</div>
+
+			<div class="label">latest in tutorials</div>
+
+			<div class="container">
+
+				<ul class="nicelist">
+				<li><a href="../../../2007/09/how-to-add-quakeworld-wiki-search-plugin/">How to add QuakeWorld Wiki search plugin</a></li>
+				<li><a href="../../../2007/03/how-to-add-your-own-wiki-profile/">How to add your own wiki profile</a></li>
+				<li><a href="../../../2007/01/how-to-spectate-games-from-outside-qhlan/">How to spectate games from outside QHLAN</a></li>
+				<li><a href="../../12/how-to-make-a-quakeworld-video/">How to make a QuakeWorld video</a></li>
+				<li><a href="../using-the-all-seeing-eye-ase/">Using The All Seeing Eye (ASE)</a></li>
+				<li><strong><a href="../../../category/tutorials/" title="View all posts in Tutorials">Browse tutorials &#187;</a></strong></li>
+		
+				</ul>
+			
+			</div>
+
+			
+			<div class="container">		
+			
+			<div class="label">related posts</div><div class="container"><ul class="nicelist"><li>No related posts found.</li></ul></div> 
+
+			</div>
+
+		</div>
+
+	</div>
+
+		<div class="clearer"></div>
+
+	</div>
+
+	<div id="footer">	
+
+		<div class="left">&copy; 2026 <a href="../../../" title="qwdrama">qwdrama</a> - created by <a href="http://arcsin.se/" title="Arcsin">Arcsin</a></div>
+				
+		<div class="right">network: <a href="http://gfx.quakeworld.nu/" title="Download QW graphics">QuakeWorld GFX</a> | <a href="http://goldrush.quakeworld.nu/" title="QuakeWorld betting">Goldrush</a> | <a href="https://www.quakeworld.nu/wiki/" title="QuakeWorld Wiki">QuakeWorld Wiki</a></div>	
+
+		<div class="clearer"></div>
+
+	</div>
+
+</div>
+</div>
+
+</body>
+</html>
+<!-- Dynamic Page Served (once) in 0.505 seconds -->
+<!-- Cached page generated by WP-Super-Cache on 2026-10-04 15:29:17 -->

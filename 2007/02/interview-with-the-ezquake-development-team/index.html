@@ -1,0 +1,329 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>Interview with the ezQuake development team | qwdrama</title>
+<meta name="keywords" content="interview,with,the,ezquake,development,team,qwdrama"/>
+<link rel="shortcut icon" type="image/ico" href="../../../favicon.ico" />
+
+<link rel="stylesheet" href="../../../default.css" type="text/css" media="screen" />
+
+<meta name="generator" content="WordPress 2.6" />
+
+</head>
+<body>
+
+<div id="wrapper">
+<div id="inner_wrapper">
+
+	<div id="top">
+		<div class="left" id="logo"><a href="../../../" title="qwdrama"><span></span></a></div>
+		<div class="right" id="rss"></div>
+		<div class="clearer"></div>
+	</div>
+
+	<div id="header">
+		<div id="highlight">
+			<a href="https://www.quakeworld.nu/wiki/" title="QuakeWorld Wiki - the open QW encyclopedia" id="wiki"><span></span></a>
+			<a href="http://gfx.quakeworld.nu/" title="QuakeWorld GFX - Download QW Graphics" id="gfx"><span></span></a>
+			<div class="clearer"></div>
+			<a href="http://goldrush.quakeworld.nu/" title="Goldrush - QuakeWorld betting" id="goldrush"><span></span></a>
+			<a href="http://nquake.com/" title="nQuake - download QuakeWorld today!" id="nquake"><span></span></a>
+			<div class="clearer"></div>
+		</div>
+	</div>
+
+	<div id="navigation_top"></div>
+
+	<div id="navigation">	
+
+		<div class="left" id="mainnav">
+			<a href="../../../" title="qwdrama frontpage" accesskey="1">Home</a>
+			<a href="../../../category/news/" title="View all posts in news" accesskey="2">News</a>
+			<a href="../../../category/interviews/" title="View all posts in interviews" accesskey="3">Interviews</a>
+			<a href="../../../category/tutorials/" title="View all posts in tutorials" accesskey="4">Tutorials</a>
+			<a href="../../../category/drama/" title="View all posts in drama" accesskey="5">Drama</a>
+			<a href="../../../2009/" title="Archives" accesskey="6">Archives</a>
+			<a href="../../../about/" title="About qwdrama" accesskey="7">About</a>
+			<div class="clearer"></div>
+		</div>
+
+		<div class="clearer"></div>
+
+	</div>
+
+	<div id="main_container">
+		
+	<div class="left" id="main">
+
+		<div class="content">
+
+  
+			<div class="post" id="post-107">
+				
+				<h1>Interview with the ezQuake development team</h1>
+
+				<div class="date">Wednesday 7th February, 2007 | <span class="comment"><a href="#comments">Skip to comments (10)</a></span></div>
+
+				<div class="body">
+					<p>The QuakeWorld lurkers and regulars got together on the quakeworld forum and made some questions to the ezQuake development team. The questions go from technical to personal and even some drama. Read more to find out what kind of people are working on your favourite quakeworld client.</p>
+<p><strong>1. Up2nOgOoD[ROCK]: Hi, how are you?</strong></p>
+<p><strong>Disconnect:</strong> =:-)</p>
+<p><strong>2. Sprit: What are you doing for a living?</strong></p>
+<p><strong>Cokeman:</strong> i&#8217;m a Swedish computer science student and part time sysadmin.</p>
+<p><strong>VVD:</strong> I&#8217;m programmer and sysadmin about <span class="nu0">6</span> years. Complete faculty of Computation Mathematics and Cybernetics of Moscow State University in <span class="nu0">2004</span>.</p>
+<p><span id="more-107"></span></p>
+<p>JohnNy_cz added, Most of us study computer science or something similar.</p>
+<p><strong>3. Ruskie: What is the team in most need of in terms of contribution (code/art/other)?</strong></p>
+<p><strong>JohnNy_cz:</strong> Webhosting with PHP&amp;MySQL, reliable long-term testers, coders.</p>
+<p><strong>VVD:</strong> Testers for current CVS version who can compile ezQuake self. And testers and developers for soft - if community need soft version&#8230;</p>
+<p><strong>Volshebnik wanted to know the following&#8230;</strong></p>
+<p>4. In version 1754 when using s_loadas8 bit 1 the sound of the lightning gun firing is screwed up (It sounds like loud static and tends to drown out other sounds). As far as I can tell it is only that one sound.</p>
+<p><strong>Tonik:</strong> After several intense brainstorming sessions the team found a solution: use s_loadas8bit<br />
+0, that fixes the problem.</p>
+<p><strong>5. Quakeworld servers use 77 fps, that is 1000 ms/13 ms = 76.9230769230769230769230769230769 fps. Would it be better to use a whole number for this (server)? Does the 77th frame actually happen? Or do these numbers just determine the lowest possible ping at 77 fps being 13 ms? Should cl_physfps be set to 76.9230769230769230769230769230769?</strong></p>
+<p><strong>JohnNy_cz:</strong> Your ping will never be exactly 13.000&#8230; ms therefore the number 76,923 doesn&#8217;t make any sense nor do the calculations.</p>
+<p><strong>6. I have noticed that with cl_nolerp 0 and pushlatency 0 the gameplay is at its smoothest, but there seems to be some extra (visual) latency going on. What is pushlatency 0 actually doing and how much visual latency is this actually adding, if any?</strong></p>
+<p><strong>Disconnect:</strong> pushlatency 0 = let ezQuake calculate best pushlatecy value. Pushlatency is some crazy prediction, i dont know how exactly it works. If you have vid_vsync 0 (0.0 in last release due to some bug :P) and CRT screen there should be no additional latency.</p>
+<p><strong>7. Is there any way for ezquake to cap the hz rate of the mouse at inbetween values, such as 77 or 154 hz? Without using that miserable dinput?</strong></p>
+<p><strong>Tonik:</strong> dinput or not, Windows USB drivers only allow certain fixed values for mouse poll rate (125/250/500 etc)</p>
+<p><strong>8. More quake used to have a wonderful feature of completely turning off explosions that I really liked. Any chance we could see that in a new release?</strong></p>
+<p><strong>JohnNy_cz:</strong> Good feature request, we will have a look at it.</p>
+<p><strong>9. In the quest for the completely non-accelerated mouse, that is no positive _or_ negative acceleration&#8230; are the command line switches -noforcemspd -noforcemparms -noforcemaccel actually helping any? If so in what way? Also, is there any way to determine based on the code what might be the ideal yaw/pitch base to yield the least amount of acceleration? Ie. m_yaw/pitch 0.22 0.022 0.0022 0.00022 0.000022 . The bigger the number, ie. 0.22 seems to be accelerated and the smaller the number ie. 0.000022 appears to be negatively accelerated.</strong></p>
+<p><strong>Tonik:</strong> In older clients, including FuhQuake and mqwcl, it so happened that starting the client without any switches would turn on acceleration. This is fixed in ezQuake, so you don&#8217;t need any extra switches. As for m_yaw and m_pitch, these are just multipliers, e.g. setting m_yaw to 0.22 instead of 0.022 makes your effective horizontal sensitivity ten times as high; setting m_pitch to -0.022 inverts the y axis (that&#8217;s the only useful application for it really). Neither cvar has anything to do with acceleration.</p>
+<p><strong>10. I suggested this in another part of the forum, but would it be possible for quake to differentiate the mouse input for left/right/up/down exactly enough to adjust the sensitivity for each? For example moving the mouse to the left being more sensitive than moving it to the right in game?</strong></p>
+<p>jogi said it would be possible. JohnNy_cz added, With such thing activated, if you would move your mouse somewhere and then back where it was, you will not aim to the same place as on the beginning. My bet is that this would be pretty much unnatural even to you.</p>
+<p><strong>11. I have heard that the visual lag that existed in glquake compared to software quake was removed. Is this really true or is there still a difference and if so how great?</strong></p>
+<p><strong>Tonik:</strong> The combination of ezQuake&#8217;s independent physics and a fast video card (200+ fps) eliminates any visual lag in both software and GL.</p>
+<p><strong>phil the fakeshaft lover had some questions to fire away:</strong></p>
+<p>12. How did you (each individual member of the team) come to be an ezQuake developer?</p>
+<p><strong>JohnNy_cz:</strong> I offered shaman and hexum that I could help with anything around their new client, so I did some minor things here and there and the most important job was the documentation system. When adding some missing bits of the documentation texts, I had to browse the source codes from time to time, so finally like 9 months later I commited my first piece of code :-)</p>
+<p><strong>VVD:</strong> I&#8217;m project manager and developer of the MVDSV since Jan <span class="nu0">2004</span>. And than I saw new client I write few patches to ezQauke <span class="br0">(</span>bugfixes for server browser<span class="br0">)</span> It was before first public build <span class="nu0">922</span>. Then I send some more bugfixes/new features and hexum or/and shaman <span class="br0">(</span>don&#8217;t remember<span class="br0">)</span> invite me in ezQuake developer team.</p>
+<p><strong>13. Have you done anything technical (software) before (not necessarily quake 1 related), and if so, what?</strong></p>
+<p><strong>Disconnect:</strong> Only some small programs at school/univercity.</p>
+<p><strong>Cokeman:</strong> I haven&#8217;t worked on any other major project, but done a bunch of small stuff&#8230; Nothing really worth to mention.</p>
+<p><strong>VVD:</strong> I wrote program for my father <span class="br0">(</span>for his work<span class="br0">)</span> at <span class="nu0">1997</span> <span class="br0">(</span>last school grade<span class="br0">)</span>. And I get money for it from his work. :-<span class="br0">)</span> Develope some small pathces for mpg123, FreeBSD kernel, samba and etc., many educational programs in school and in university, many small tools and use its now.<span class="nu0"> 2</span> years ago I start to work with java <span class="br0">(</span>Eclipse as developer platform<span class="br0">)</span> and our developers team wrote servlet application - website core: apache+tomcat+struts+mysql <span class="br0">(</span>do u want url? :-<span class="br0">)</span><span class="br0">)</span>. Now I develop another website using analogous technologies: apache+IBM WebSphere community edition<span class="br0">(</span>tomcat5+J2EE apache geronimo<span class="br0">)</span>+jsf+hibernate+mysql+mssql - corporative portal.</p>
+<p><strong>14. Do you actively play quakeworld? How often, what are your favorite maps and your favorite weapons? Do you watch demos? What is your favorite mod (duel/2on2/4on4/ffa/etc) and who is your favorite(s) to watch players.</strong></p>
+<p><strong>Cokeman:</strong> I don&#8217;t play much nowadays (last 6 months), busy coding. Played a lot 2004-2006 though. When I play I mostly play 1on1 against classmates. Haven&#8217;t watched much demos the last couple of months either, but yea. Favourite players to watch, Reppie, Griffin, Razor are some that come to mind.</p>
+<p><strong>Disconnect:</strong> Theese days no. Since to busy with real life and there are no 4on4 leagues. When NQR will began i&#8217;ll play much more (like every day for 2-3 hrs :P). My favorite map is &#8216;muskrat2&#8242;. Owned? :P It is TeamFortress map, pretty popular in Russia. In QW i like dm2@4on4, dm4@2on2 and ztndm3/aero@1on1. My favorite mod is TF&#8211;&gt;4on4&#8211;&gt;1on1&#8211;&gt;2on2. FFA and DMM4 is only for warm-up. midair is 100% zzzz mode.</p>
+<p><strong>VVD:</strong> Yes. Last few weeks I play ~<span class="nu0">2</span> hours/day ~<span class="nu0">4</span> days/week = ~<span class="nu0">8</span> hours/week. ztndm3 &amp; aerowalk in 1on1/2on2; e1m2 in 4on4; povdmm4, airar &amp; tearena in dmm4. LG &amp; AXE! :-D Watch, but only recomended by friends or from leagues/lans and tricks demos. :-<span class="br0">)</span> 1on1 dmm3/<span class="nu0">4</span>. 2on2, but I better play 1on1. 4on4 - div6 <span class="br0">(</span>no time for pracs<span class="br0">)</span>. :-<span class="br0">(</span> Doom, B1aze, xpr, Dag, Griffin, Mutilator; Rock&amp;Reppie&amp;Mortuary <span class="br0">(</span>when they turn off +forward at least half game<span class="br0">)</span> - don&#8217;t like demos when +forward more skilled player lose strategist <span class="br0">(</span>cs<span class="br0">)</span> player only because of his stupidity - &#8220;+forward and shoot me, I&#8217;m <span class="nu0">0</span>:<span class="nu0">100</span> with sg only!&#8221;.</p>
+<p><strong>15. Do you like cookies?</strong></p>
+<p><strong>Jogi: </strong>i am kinda like the cookie monster in that family guy episode (if anyone has seen that ;])</p>
+<p><strong>VVD:</strong> Hm&#8230; Web cookies or food? :-D</p>
+<p><strong>Faustov wanted to put the heat on&#8230;</strong></p>
+<p>16. What&#8217;s the true story behind ezquake team getting rid of shaman?</p>
+<p><strong>Disconnect:</strong> I dont understand what was wrong for him. But he was crying and whining like emo for 2-3 days and then mysteriously disappear.</p>
+<p><strong>VVD:</strong> No comments.</p>
+<p><strong>17. Why did you stop cooperating with hexum?</strong></p>
+<p><strong>JohnNy_cz:</strong> Hexum also left the QW scene completely, I tried to convince him to at least continue developing his security modules, but after some talks that first sounded promising he disappeared forever :-(.</p>
+<p><strong>VVD:</strong> No comments.</p>
+<p><strong>18. Did you really add hidden helpers for russian players in the recent ezquake clients?</strong></p>
+<p><strong>qqshka:</strong> Yes.</p>
+<p><strong>19. Was Ilf the first one to test some beta ezQuake aimbot for russian (or any) players?</strong></p>
+<p><strong>Tonik:</strong> ParadokS was our faithful tester from the beginning. Then Ilf came along, but he broke his promise never to set cl_shaftpercentage higher than 40, so we exposed him.</p>
+<p><strong>VVD:</strong> :-/ I saw Ilf&#8217;s lg-aim at MSKLAN on povdmm4 with top russian dmm4 players - doom, xpr, witka: he has lg from <span class="nu0">37</span> to <span class="nu0">42</span> <span class="br0">(</span>only <span class="nu0">1</span> time <span class="nu0">34.9</span><span class="br0">)</span> all <span class="nu0">8</span> games! Demos at: http://quakeworld.ru/files/vvd/demos/msklan2006/1on1.pracs.rar P.S. Stupid question - disrespect. :-<span class="br0">(</span></p>
+<p><strong>Ake_Vader was curious to know&#8230;</strong></p>
+<p>20. I want to know what big upcoming features they are working on and what they think about QTV. Will it ever take off and what&#8217;s needed to make it happen? :p Nice with a developer interview anyway as they don&#8217;t get as much recognition as they deserve. Personally, I am working on vid_restart, for windows its finished, only need to fix few issues. Trying add it to linux, dunno is this happened or not.</p>
+<p><strong>qqshka:</strong> About QTV, basically it workes, really :&gt; Few weeks ago was fixed few bugs(in mvdsv and QTV), so it must be usable. Also in ezquake was added possibility stream mvd demo from QTV directly, this gives smooth playback. Probably we can try it on new TOT servers, just need to ask admin setup QTV and latest mvdsv.</p>
+<p><strong>Jogi:</strong> ive been working on a cam system and some menu stuff which i will include in ezquake once its done(the cam system at least, hope so ;])</p>
+<p><strong>VVD:</strong> FTE developers have to stop adding many useless unstable features in FTE Quake and make to work existing features, such as QTV, completely stable. :-<span class="br0">[</span>=<span class="br0">]</span> QTV support already added to MVDSV and ezQuake, but it work unstable: qtvproxy and MVDSV periodically crashes. :-<span class="br0">(</span></p>
+<p>Thanks for the question and thanks to the team giving some of their sweet $$ time.</p>
+
+
+					
+					<div class="metadata">
+						<div class="left">Posted by <a href="../../../author/ruskie/" title="Posts by ruskie">ruskie</a> in <a href="../../../category/interviews/" title="View all posts in Interviews" rel="category tag">Interviews</a></div>
+						<div class="right"><span class="tag"><a href="../../../tag/ezquake/" rel="tag">ezquake</a></span></div>
+						<div class="clearer"></div>
+					</div>
+
+				</div>
+
+			</div>
+
+			
+	<h3 id="comments">10 responses to &#8220;Interview with the ezQuake development team&#8221;</h3>
+
+	<div class="post" id="comment-141">
+		<div class="comment">
+			<div class="user"><span class="comment">fst</span></div>
+			<div class="date">Wednesday 7th February, 2007</div>
+			<div class="body">
+			<p>Good one, now we can ban *.ru from all leagues and tourneys! :) BTW, someone spotted hexum on IRC this week :E</p>
+			</div>
+		</div>
+	</div>
+
+	
+	<div class="post" id="comment-142">
+		<div class="comment">
+			<div class="user"><span class="comment">B1aze</span></div>
+			<div class="date">Wednesday 7th February, 2007</div>
+			<div class="body">
+			<p>Nice interview.<br/>I thought that disconnect in France right now. ?)</p>
+			</div>
+		</div>
+	</div>
+
+	
+	<div class="post" id="comment-143">
+		<div class="comment">
+			<div class="user"><span class="comment">cuky</span></div>
+			<div class="date">Wednesday 7th February, 2007</div>
+			<div class="body">
+			<p>and i'm air ;] but nice interview</p>
+			</div>
+		</div>
+	</div>
+
+	
+	<div class="post" id="comment-144">
+		<div class="comment">
+			<div class="user"><span class="comment">bps</span></div>
+			<div class="date">Wednesday 7th February, 2007</div>
+			<div class="body">
+			<p>a nice read, and a great job you guys do over there - keep it up!</p>
+			</div>
+		</div>
+	</div>
+
+	
+	<div class="post" id="comment-146">
+		<div class="comment">
+			<div class="user"><span class="comment">peppe</span></div>
+			<div class="date">Wednesday 7th February, 2007</div>
+			<div class="body">
+			<p>Was gonna ask here and on the qw.nu forum, are there any plans on making a cool drag 'n drop hud-editor? like the cpma one that is truly awesome!<br/>good inverview otherwise</p>
+			</div>
+		</div>
+	</div>
+
+	
+	<div class="post" id="comment-147">
+		<div class="comment">
+			<div class="user"><span class="comment">phil</span></div>
+			<div class="date">Friday 9th February, 2007</div>
+			<div class="body">
+			<p>so up2, wanna have that talk with me again? :&gt;</p>
+			</div>
+		</div>
+	</div>
+
+	
+	<div class="post" id="comment-148">
+		<div class="comment">
+			<div class="user"><span class="comment">Up2nOgOoD[ROCK]</span></div>
+			<div class="date">Friday 9th February, 2007</div>
+			<div class="body">
+			<p>Tonik: After several intense brainstorming sessions the team found a solution: use s_loadas8bit 0, that fixes the problem.</p><p>
+GOLD.</p>
+			</div>
+		</div>
+	</div>
+
+	
+	<div class="post" id="comment-162">
+		<div class="comment">
+			<div class="user"><span class="comment">fix</span></div>
+			<div class="date">Sunday 18th February, 2007</div>
+			<div class="body">
+			<p>nice stuff</p>
+			</div>
+		</div>
+	</div>
+
+	
+	<div class="post" id="comment-171">
+		<div class="comment">
+			<div class="user"><span class="comment">PrimeviL</span></div>
+			<div class="date">Tuesday 27th February, 2007</div>
+			<div class="body">
+			<p>Nice read :&gt;</p>
+			</div>
+		</div>
+	</div>
+
+	
+	<div class="post" id="comment-1391">
+		<div class="comment">
+			<div class="user"><span class="comment">1.)00 OnE - 01</span></div>
+			<div class="date">Friday 22nd June, 2007</div>
+			<div class="body">
+			<p>HI, I am from Brazil, South america. I am needing some extra help in source codes to catch the best performance I can have in my system but is hard to find with the brasilians players I know. Could someOnE send me some config.cfg files so i could analise then? pedro.damiao@bhe.incra.gov.br  or  damiaopedro@gmail.com</p>
+			</div>
+		</div>
+	</div>
+
+	
+ 
+			<div class="separator"><a href="#top" title="To top"><span></span></a></div>
+
+			 <p class="nocomments">(comments are closed)</p>
+
+	
+		</div>
+
+	</div>
+
+	<div class="right" id="sidebar">
+
+		<div class="content">
+
+			<div class="label">quicknav</div>
+
+			<div class="container">
+
+				<ul class="nicelist">
+					<li><span class="prev"><a href="../../01/interview-with-ul/">UL: &#8220;A bit of Counter-strike Source.&#8221;</a></span></li>					<li><span class="next"><a href="../tot_oddjob-interview/">ToT_Oddjob interview</a></span></li>				</ul>
+			</div>
+
+			<div class="label">latest in interviews</div>
+
+			<div class="container">
+
+				<ul class="nicelist">
+				<li><a href="../../../2008/11/locktar-goes-dreamhack/">LocKtar goes DreamHack</a></li>
+				<li><a href="../../../2008/07/mawe-interview/">Mawe interview</a></li>
+				<li><a href="../../../2008/05/short-pre-match-interview-with-blaze/">Short pre-match interview with blAze</a></li>
+				<li><a href="../../../2008/02/locust-i-cant-think-of-any-player-i-absolutely-cant-stand/">Locust: &#8220;I can&#8217;t think of any player I ABSOLUTELY can&#8217;t stand.&#8221;</a></li>
+				<li><a href="../../10/dakoth-”winners-come-and-go-but-those-who-enjoy-the-game-stay-forever”/">Dakoth: ”Winners come and go, but those who enjoy the game stay forever”</a></li>
+				<li><strong><a href="../../../category/interviews/" title="View all posts in Interviews">Browse interviews &#187;</a></strong></li>
+		
+				</ul>
+			
+			</div>
+
+			
+			<div class="container">		
+			
+			<div class="label">related posts</div><div class="container"><ul class="nicelist"><li><a href="../../04/ezquake-beta-released-and-ready-for-testing/" title="ezQuake beta released and ready for testing">ezQuake beta released and ready for testing</a></li></ul></div> 
+
+			</div>
+
+		</div>
+
+	</div>
+
+		<div class="clearer"></div>
+
+	</div>
+
+	<div id="footer">	
+
+		<div class="left">&copy; 2026 <a href="../../../" title="qwdrama">qwdrama</a> - created by <a href="http://arcsin.se/" title="Arcsin">Arcsin</a></div>
+				
+		<div class="right">network: <a href="http://gfx.quakeworld.nu/" title="Download QW graphics">QuakeWorld GFX</a> | <a href="http://goldrush.quakeworld.nu/" title="QuakeWorld betting">Goldrush</a> | <a href="https://www.quakeworld.nu/wiki/" title="QuakeWorld Wiki">QuakeWorld Wiki</a></div>	
+
+		<div class="clearer"></div>
+
+	</div>
+
+</div>
+</div>
+
+</body>
+</html>
+<!-- Dynamic Page Served (once) in 0.512 seconds -->
+<!-- Cached page generated by WP-Super-Cache on 2026-10-04 15:30:47 -->
